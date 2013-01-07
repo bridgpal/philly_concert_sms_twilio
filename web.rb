@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'twilio-ruby'
+require 'nokogiri'
 
 account_sid = ENV['TWILIO_ACCT_SID']
 auth_token = ENV['TWILIO_AUTH_TOKEN']
@@ -27,7 +28,7 @@ get '/' do
 end
 
 post '/sms' do
-  return concert = concert_find(params[:Body])
+  concert = concert_find("params[:Body]")
   twiml = Twilio::TwiML::Response.new do |r|
   	r.Sms concert
   end
