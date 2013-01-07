@@ -24,6 +24,7 @@ end
 
 get '/' do
   "philly concerts by sms test"
+end
 
 post '/sms' do
   concert = concert_find(params[:Body])
@@ -34,4 +35,3 @@ post '/sms' do
 end
 
 
-end
