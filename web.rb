@@ -4,6 +4,7 @@ require 'twilio-ruby'
 account_sid = ENV['TWILIO_ACCT_SID']
 auth_token = ENV['TWILIO_AUTH_TOKEN']
 
+
 def concert_find(band)
 url = "http://xpn.org/concerts-events/concert-calendar"
 data = Nokogiri::HTML(open(url))
@@ -24,7 +25,6 @@ end
 get '/' do
   "philly concerts by sms test"
 
-
 post '/sms' do
   concert = concert_find(params[:Body])
   twiml = Twilio::TwiML::Response.new do |r|
@@ -32,5 +32,6 @@ post '/sms' do
   end
   twiml.text
 end
+
 
 end
