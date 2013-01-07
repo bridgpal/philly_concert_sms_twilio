@@ -1,5 +1,5 @@
-require 'sinatra'
 require 'twilio-ruby'
+require 'sinatra'
 require 'nokogiri'
 
 account_sid = ENV['TWILIO_ACCT_SID']
