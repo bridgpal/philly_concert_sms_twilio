@@ -30,7 +30,7 @@ end
 post '/sms' do
   concert = concert_find(params[:Body])
   twiml = Twilio::TwiML::Response.new do |r|
-  	r.Sms concert
+  	r.Sms concert.to_s
   end
   twiml.text
 end
