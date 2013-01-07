@@ -27,7 +27,7 @@ get '/' do
 end
 
 post '/sms' do
-  concert = concert_find(params[:Body])
+  return concert = concert_find(params[:Body])
   twiml = Twilio::TwiML::Response.new do |r|
   	r.Sms concert
   end
